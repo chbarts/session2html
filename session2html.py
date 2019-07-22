@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Chris Barts 2019
+
 import os
 import sys
 import time
