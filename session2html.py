@@ -62,6 +62,12 @@ name = None
 ltime = None
 obj = None
 
+if (__name__ == '__main__') and (len(sys.argv) == 1):
+    eprint(sys.argv[0] + ': convert a Firefox SessionManager .session file to HTML')
+    eprint('Takes a file named foo.bar for any extension .bar and writes it to foo.html in the current directory')
+    eprint('Exits if the output file exists')
+    sys.exit(0)
+
 with open(sys.argv[1], 'r') as fp:
     fname = os.path.splitext(sys.argv[1])[0] + '.html'
     if os.path.exists(fname):
