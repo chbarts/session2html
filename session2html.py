@@ -47,7 +47,7 @@ def getheader(fp):
 # windows.tabs.entries.title
 
 def write_file(fp, name, ltime, obj):
-    fp.write('<html><head><meta charset="utf-8"><title>' + name + '</title></head>\n')
+    fp.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + name + '</title></head>\n')
     fp.write('<body><h1>' + name + ' # ' + time.strftime("%a %b %d %H:%M:%S %Z %Y", ltime) + '</h1>\n')
     fp.write('<ul>\n')
     for window in obj['windows']:
