@@ -54,7 +54,10 @@ def write_file(fp, name, ltime, obj):
         for tab in window['tabs']:
             fp.write('<li><ol>\n')
             for entry in tab['entries']:
-                fp.write("<li><a href=\"{0}\">{1}</a></li>\n".format(entry['url'], entry['title']))
+                if entry['title']:
+                    fp.write("<li><a href=\"{0}\">{1}</a></li>\n".format(entry['url'], entry['title']))
+                else:
+                    fp.write("<li><a href=\"{0}\">{1}</a></li>\n".format(entry['url'], entry['url']))
             fp.write('</ol></li>\n')
     fp.write('</ul>\n')
     fp.write('</body></html>\n')
