@@ -74,7 +74,7 @@ if (__name__ == '__main__') and (len(sys.argv) == 1):
     sys.exit(0)
 
 with open(sys.argv[1], 'r') as fp:
-    fname = os.path.splitext(sys.argv[1])[0] + '.html'
+    fname = os.path.basename(os.path.splitext(sys.argv[1])[0]) + '.html'
     if os.path.exists(fname):
         eprint(sys.argv[0] + ': ' + fname + ': file exists!')
         sys.exit(1)
